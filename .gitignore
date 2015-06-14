@@ -1,0 +1,5 @@
+.idea
+bower_components
+test/bower-components
+node_modules
+dist

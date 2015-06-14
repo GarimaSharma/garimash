@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="My Blogs">
+  <title>Blogs by Garima</title>
+
+  <meta name="theme-color" content="#303F9F">
+
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Blogs by Garima">
+
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="elements/elements.html">
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+    <my-blogs></my-blogs>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="networkFirst"
+                         precache-file="precache.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+
+  </template>
+
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
