@@ -1,33 +1,12 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
 <dom-module id="my-blogs">
-  <style>
-    :host {
-      display: block;
-    }
-
-    @media (max-width: 600px) {
-      h1.paper-font-display1 {
-        font-size: 24px;
-      }
-    }
-  </style>
   <template>
-    <h1 class="paper-font-display1"><span>jo baby</span><span>{{greeting}}</span></h1>
-    <!-- Listens for "input" event and sets greeting to <input>.value -->
-    <input class="paper-font-body2" value="{{greeting::input}}">
+    <paper-toolbar class="paper-font-display1">
+      <span>Intrigue Learn Share - Repeat!</span>
+    </paper-toolbar>
+    <template is="dom-repeat" items="{{ headers }}" class="headers">
+      <blog-header header="{{ item.name }}" destination="{{ item.destination }}"></blog-header>
+    </template>
   </template>
 </dom-module>
-<script>
-  (function() {
-    Polymer({
-      is: 'my-blogs',
-
-      properties: {
-        greeting: {
-          type: String,
-          value: 'Welcome!',
-          notify: true
-        }
-      }
-    });
-  })();
-</script>
+<script src="my-blogs.js"></script>
